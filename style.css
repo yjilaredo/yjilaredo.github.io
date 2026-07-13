@@ -93,6 +93,8 @@ nav h2{
 
     font-size:72px;
 
+    color: #f1f1f1;
+
     letter-spacing:8px;
 
     margin-bottom:20px;
@@ -103,7 +105,7 @@ nav h2{
 
     font-size:18px;
 
-    color:#9fa9ba;
+    color:#3D4F59;
 
     letter-spacing:4px;
 
@@ -121,7 +123,7 @@ nav h2{
 
     font-size:22px;
 
-    color:#d7d7d7;
+    color:#3D4F59;
 
 }
 
@@ -131,23 +133,52 @@ nav h2{
 
     padding:15px 40px;
 
-    border:1px solid rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,.15);
 
-    color:white;
+    border-radius:50px;
+
+    background:transparent;
+
+    color:#f5f5f5;
 
     text-decoration:none;
 
     letter-spacing:3px;
 
-    transition:.3s;
+    transition:
+        background .35s,
+        color .35s,
+        transform .35s,
+        box-shadow .35s,
+        border-color .35s;
 
 }
 
 .button:hover{
 
-    background:white;
+    background:#ffffff;
 
     color:#111214;
+
+    border-color:#ffffff;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 35px rgba(255,255,255,.12);
+
+}
+
+.button:focus{
+
+    outline:none;
+
+}
+
+.button:focus-visible{
+
+    outline:2px solid rgba(255,255,255,.5);
+
+    outline-offset:4px;
 
 }
 
@@ -181,9 +212,40 @@ nav h2{
 
 }
 
-.hero{
+.hero h1{
 
-    animation:fadeUp 1.2s ease;
+    animation:fadeUp 1s ease forwards;
+
+}
+
+.hero p{
+
+    opacity:0;
+
+    animation:fadeUp .9s ease forwards;
+
+    animation-delay:.3s;
+
+}
+
+.hero h3{
+
+    opacity:0;
+
+    animation:fadeUp .9s ease forwards;
+
+    animation-delay:.6s;
+
+}
+
+.button{
+
+    opacity:0;
+
+    animation:fadeUp .9s ease forwards;
+
+    animation-delay:.9s;
+
 }
 
 @keyframes fadeUp{
@@ -290,16 +352,26 @@ nav h2{
 
 }
 
-.project-header{
+.project-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-    display:flex;
+.project-header h3 {
+    margin-bottom: 10px;
+}
 
-    justify-content:space-between;
+.project-header span {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
 
-    align-items:center;
-
-    margin-bottom:25px;
-
+.project-description {
+    max-width: 600px;
+    margin: 15px auto 0;
+    line-height: 1.6;
+    opacity: 0.75;
 }
 
 .project-header h3{
@@ -522,4 +594,115 @@ html {
 nav a {
     color: inherit;
     text-decoration: none;
+}
+
+.project-description {
+    max-width: 600px;
+    margin-top: 15px;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(70px);
+    filter:blur(8px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease,
+        filter .9s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+}
+
+.project:nth-child(2){
+    transition-delay:.15s;
+}
+
+.project:nth-child(3){
+    transition-delay:.3s;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:40px;
+    letter-spacing:4px;
+}
+
+nav{
+    padding:20px;
+}
+
+}
+
+footer{
+    padding:60px 20px;
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#0c0d0f;
+}
+
+footer p{
+    color:#cfcfcf;
+    letter-spacing:1px;
+}
+
+.footer-subtitle{
+
+    margin-top:12px;
+
+    color:#7f8792;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+nav.scrolled{
+
+    background:rgba(10,10,10,.92);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+
+    transition:.4s ease;
+
+}
+
+.project{
+
+    transition:
+
+        transform .45s ease,
+
+        opacity .45s ease;
+
+}
+
+.project:hover{
+
+    transform:translateY(-12px);
+
+}
+
+::selection{
+
+    background:#ffffff;
+
+    color:#111214;
+
 }
