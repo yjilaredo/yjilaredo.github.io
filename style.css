@@ -71,6 +71,42 @@ nav h2{
 
 }
 
+.hamburger{
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    width:30px;
+
+    height:22px;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    z-index:1001;
+
+}
+
+.hamburger span{
+
+    width:100%;
+
+    height:3px;
+
+    background:#ffffff;
+
+    border-radius:2px;
+
+    transition:.35s ease;
+
+}
+
 .hero{
 
     min-height:100vh;
@@ -517,16 +553,67 @@ nav a {
     transition-delay:.3s;
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.hero h1{
-    font-size:40px;
-    letter-spacing:4px;
-}
+    nav{
 
-nav{
-    padding:20px;
-}
+        padding:20px;
+
+    }
+
+    nav h2{
+
+        font-size:15px;
+
+        letter-spacing:2px;
+
+    }
+
+    .hamburger{
+
+        display:flex;
+
+    }
+
+    nav ul{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:260px;
+
+        height:100vh;
+
+        background:#111214;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:40px;
+
+        transition:right .35s ease;
+
+    }
+
+    nav ul.active{
+
+        right:0;
+
+    }
+
+    .hero h1{
+
+        font-size:40px;
+
+        letter-spacing:4px;
+
+    }
 
 }
 
