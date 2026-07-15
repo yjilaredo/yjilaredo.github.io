@@ -134,6 +134,7 @@ nav h2{
     background-position:center;
 
     position:relative;
+    isolation:isolate;
 
     display:flex;
     flex-direction:column;
@@ -145,6 +146,26 @@ nav h2{
     padding:0 30px;
 
     color:white;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(17,18,20,0) 35%,
+            rgba(17,18,20,.20) 70%,
+            rgba(17,18,20,.55) 100%
+        );
+
+    pointer-events:none;
 
 }
 
@@ -329,9 +350,19 @@ nav h2{
 
 .work{
 
-    padding:150px 12%;
+    position:relative;
+
+    overflow:hidden;
+
+    padding:180px 12% 140px;
 
     text-align:center;
+
+    background:linear-gradient(
+        180deg,
+        #111214 0%,
+        #17191D 100%
+    );
 
 }
 
@@ -359,7 +390,7 @@ nav h2{
 
     max-width:1100px;
 
-    margin:120px auto;
+    margin:170px auto;
 
 }
 
@@ -398,7 +429,7 @@ nav h2{
 
     letter-spacing:2px;
 
-    user-select:none;
+    user-select:text;
 
 }
 
@@ -548,9 +579,17 @@ user-select:none;
 }
 
 .about {
-    padding: 100px 20px;
-    background: #111;
-    color: white;
+
+    padding:170px 20px;
+
+    background:linear-gradient(
+        180deg,
+        #17191D 0%,
+        #111214 100%
+    );
+
+    color:white;
+
 }
 
 .about-content {
@@ -670,7 +709,7 @@ nav a {
 }
 
 footer{
-    padding:60px 20px;
+    padding:80px 20px;
     text-align:center;
 
     border-top:1px solid rgba(255,255,255,.08);
@@ -737,7 +776,7 @@ nav.scrolled{
 
 .contact{
 
-    padding:120px 20px;
+    padding:170px 20px 140px;
 
     text-align:center;
 
@@ -768,5 +807,45 @@ nav.scrolled{
     margin-top:20px;
 
     color:white;
+
+}
+
+/* Prevent decorative text from being highlighted */
+
+nav h2,
+.hero h1,
+.about,
+footer {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Soft ambient glow behind Portfolio */
+
+.work::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-300px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:900px;
+
+    height:900px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.02);
+
+    filter:blur(140px);
+
+    pointer-events:none;
 
 }
